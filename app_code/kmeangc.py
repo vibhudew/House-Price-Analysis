@@ -153,5 +153,5 @@ kmean=KMeans(n_jobs = -1, n_clusters = 5, init='k-means++')
 kmean.fit(x, y)
 
 import pickle
-pickle.dump(kmean,open('kmeans.pkl','wb'))
+pickle.dump(kmean,open('kmeans1.pkl','wb'))
 
