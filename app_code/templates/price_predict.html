@@ -70,129 +70,71 @@
         
     </style>
   
-        <center>
-                
-            <h1>Welcome to House Price Analysis</h1>
-                <div class="container" style="opacity:0.9;" > 
-                
-                    <form action="{{url_for('predict')}}" method="post" accept-charset="utf-8" class="form_css">
-                        <div class="row">
+  <center>
+    <h1>House Price Prediction</h1><br>
 
-                            <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>No of Bedrooms</b></label>
-                                <input type="text" class="form-control" id="bedrooms" name="bedrooms" placeholder="Enter No of Bedrooms">
-                            </div>
-                            <br><br> <br><br>
+    <div class="container" style="opacity:0.9;" >
 
-                            <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>No of Bathrooms</b></label>
-                                <input type="text" class="form-control" id="bathrooms" name="bathrooms" placeholder="Enter No of Bedrooms">
-                            </div>
-                            <br><br> <br><br>
+        <form action="{{url_for('predict')}}"method="POST" class="form_css">
 
-                            <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>sqft_lot</b></label>
-                                <input type="text" class="form-control" id="sqft_lot" name="sqft_lot" placeholder="Enter No of Bedrooms">
-                            </div>
-                            <br><br> <br><br>
-
-                            <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>sqft_living</b></label>
-                                <input type="text" class="form-control" id="sqft_living" name="sqft_living" placeholder="Enter No of Bedrooms">
-                            </div>
-                            <br><br> <br><br>
-
-                            <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b> sqft_above</b></label>
-                                <input type="text" class="form-control" id="sqft_above" name="sqft_above" placeholder="Enter No of Bedrooms">
-                            </div>
-                            <br><br> <br><br>
-
-                            <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>sqft_basement</b></label>
-                                <input type="text" class="form-control" id="sqft_basement" name="sqft_basement" placeholder="Enter No of Bedrooms">
-                            </div>
-                            <br><br> <br><br>
-
-                            <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>Enter No of Floors</b></label>
-                                <input type="text" class="form-control" id="floors" name="floors" placeholder="Enter No of Bedrooms">
-                            </div>
-                            <br><br> <br><br>
-
-                            <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>Enter No of waterfront</b></label>
-                                <input type="text" class="form-control" id="waterfront" name="waterfront" placeholder="Enter No of Bedrooms">
-                            </div>
-                            <br><br> <br><br>
-
-                            <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>Enter No of view</b></label>
-                                <input type="text" class="form-control" id="view" name="view" placeholder="Enter No of Bedrooms">
-                            </div>
-                            <br><br> <br><br>
-
-                            <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>Enter No of condition An index from 1 to 5</b></label>
-                                <input type="text" class="form-control" id="condition" name="condition" placeholder="Enter No of Bedrooms">
-                            </div>
-                            <br><br> <br><br>
-
-                            <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>Enter No of grade</b></label>
-                                <input type="text" class="form-control" id="grade" name="grade" placeholder="Enter No of Bedrooms">
-                            </div>
-                            <br><br> <br><br>
-
-                            <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b> yr_built</b></label>
-                                <input type="text" class="form-control" id="yr_built" name="yr_built" placeholder="Enter No of Bedrooms">
-                            </div>
-                             <br><br> <br><br>
-
-                              <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>  yr_renovated</b></label>
-                                <input type="text" class="form-control" id="yr_renovated" name="yr_renovated" placeholder="Enter No of Bedrooms">
-                            </div>
-                             <br><br> <br><br>
-
-                              <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>  lat</b></label>
-                                <input type="text" class="form-control" id="lat" name="lat" placeholder="Enter No of Bedrooms">
-                            </div>
-                             <br><br> <br><br>
-
-                              <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>  long</b></label>
-                                <input type="text" class="form-control" id="long" name="long" placeholder="Enter No of Bedrooms">
-                            </div>
-                             <br><br> <br><br>
-                             
-                             <div class="col-md-6 form-group" style="text-align:center">
-                                <label><b>  yr_sold</b></label>
-                                <input type="text" class="form-control" id="yr_sold" name="yr_sold" placeholder="Enter No of Bedrooms">
-                            </div>
-                             <br><br> <br><br>
-                             
-                             <input type="submit" class="btn btn-default" value="Predict">
-
-                        </div>
-                    </form>
-
-                    <br><br>
-                   
-                        <div class="container" id="val1">
-                            {{ prediction_text }}
-                        </div>
-                        <br>
-                   
-                    
-
-                </div>   
            
- 
-            </center>
+                        <label class="sr-only">No of Bedrooms:</label>
+                        <input type="text", id="bedrooms" name="bedrooms" placeholder="Enter No of Bedrooms" required>
+                  
+                        <label class="sr-only">No of Bathrooms:</label>
+                        <input type="text", id="bathrooms" name="bathrooms" placeholder="Enter No of Bathrooms" required>
+                   
+                        <label class="sr-only">No of Floors:</label>
+                        <input type="text", id="floors" name="floors" placeholder="Enter No of Floors" required>
 
+                        <label class="sr-only">View of the property:</label>
+                        <input type="text", id="view" name="view" placeholder="Enter an index from 0 to 4 of how good the view of the property" required>
 
-  </body>
+                        <label class="sr-only">Condition of the house:</label>
+                        <input type="text", id="condition" name="condition" placeholder="Enter an index from 1 to 5 on the condition of the apartment" required>
+
+                        <label class="sr-only">Grade of the house:</label>
+                        <input type="text", id="grade" name="grade" placeholder="Enter an index from 1 to 13" required>
+<!--
+                        <label class="sr-only">Zipcode of the house:</label>
+                        <input type="text", id="zipcode" name="zipcode" placeholder="Enter zipcode" required>
+-->
+
+                        <label class="sr-only">Latitude:</label>
+                        <input type="text", id="lat" name="lat" placeholder="Enter latitude" required>
+                   
+                        <label class="sr-only">Longitude:</label>
+                        <input type="text", id="long" name="long" placeholder="Enter longtitude" required>
+
+                        <label class="sr-only">Waterfront Available or not </label>
+                        <input type="text",  id="has_waterfront" name="has_waterfront" placeholder="Enter whether waterfront has or not(boolean value 1 or 0)" required>
+                   
+                        <label class="sr-only">Total Square Footage of the property:</label>
+                        <input type="text", id="sqft_total" name="sqft_total" placeholder="Enter Total Square Footage of the property" required>
+
+                        <label class="sr-only">Sale year:</label>
+                        <input type="text", id="sales_yr" name="sales_yr" placeholder="Enter Sale Year" required>
+
+                        <label class="sr-only">Sale month:</label>
+                        <input type="text", id="sales_mth" name="sales_mth" placeholder="Enter Sale Month" required>
+                   
+                        <label class="sr-only">Age of the house:</label>
+                        <input type="text",id="age" name="age" placeholder="Sale Year - Built Year" required>
+                    
+                        <label class="sr-only">Age of the house after renovated:</label>
+                        <input type="text",  id="age_rnv" name="age_rnv" placeholder="Renovated Year - Sale Year" required>
+                    
+                        
+            
+            <input type="submit" class="btn btn-default" value="Predict">
+                        
+        </form>
+    </div>
+    <br>
+    <br>
+    <div class="container" id="val1">
+    {{ prediction_text }}
+    </div><br>
+</center>
+</body>
 </html>
