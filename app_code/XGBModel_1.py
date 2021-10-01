@@ -501,7 +501,7 @@ prediction['Difference'] = np.round(abs(y_hat_test - y_test),0)
 
 #Convert DataFrame to a csv file that can be uploaded
 #This is saved in the same directory as your notebook
-filename = 'King County House Prediction.csv'
+filename = 'House Price Prediction Vs Real.csv'
 
 prediction.to_csv(filename,index=False)
 
