@@ -7,39 +7,12 @@ import pandas as pd
 # model=df.drop(['ID'],axis=1)
 
 app=Flask(__name__)
-model=pickle.load(open('xgbmodel.pkl','rb'))
+model=pickle.load(open('gradientModel.pickle','rb'))
 
 
 @app.route('/')
 def home():
     return render_template('price_predict.html')
-
-'''
-@app.route('/predict_price',methods=['POST'])
-def predict_price():
-
-    bedrooms = request.form['bedrooms']
-    bathrooms = request.form['bathrooms']
-    floors = request.form['floors']
-    waterfront = request.form['waterfront']
-    view = request.form['view']
-    condition = request.form['condition']
-    grade = request.form['grade']
-    yr_built = request.form['yr_built']
-    yr_renovated = request.form['yr_renovated']
-    lat = request.form['lat']
-    long = request.form['long']
-    sqft_total = request.form['sqft_total']
-
-    arr = np.array([['bedrooms', 'bathrooms', 'floors', 'waterfront', 'view',
-       'condition', 'grade', 'yr_built', 'yr_renovated', 'lat', 'long',
-       'sqft_total']])
-
-    pred=model.predict(arr)
-
-    return render_template('price_predict.html',data=pred,bedrooms=bedrooms,bathrooms=bathrooms,floors=floors,waterfront=waterfront,
-    view=view,condition=condition,grade=grade, yr_built =yr_built,yr_renovated=yr_renovated,lat=lat,long=long,sqft_total=sqft_total)
-'''
 
 #To use the predict button in our web-app
 @app.route('/predictPrice',methods=['POST'])
