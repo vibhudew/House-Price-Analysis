@@ -113,7 +113,7 @@
                         <input type="text",  name="bathrooms", placeholder="Enter No of Bathrooms" required>
                    
                         <label class="sr-only">No of Floors:</label>
-                        <input type="text",  name="floors" ,placeholder="Enter No of Floors" required>
+                        <input type="text",  name="floors" , placeholder="Enter No of Floors" required>
 
                         <label class="sr-only">Waterfront Available or not </label>
                         <input type="text",   name="waterfront", placeholder="Enter whether waterfront has or not(boolean value 1 or 0)" required>
@@ -122,10 +122,10 @@
                         <input type="text",  name="view", placeholder="Enter an index from 0 to 4 of how good the view of the property" required>
 
                         <label class="sr-only">Condition of the house:</label>
-                        <input type="text",  name="condition" ,placeholder="Enter an index from 1 to 5 on the condition of the apartment" required>
+                        <input type="text",  name="condition" , placeholder="Enter an index from 1 to 5 on the condition of the apartment" required>
 
                         <label class="sr-only">Grade of the house:</label>
-                        <input type="text",  name="grade" ,placeholder="Enter an index from 1 to 13" required>
+                        <input type="text",  name="grade" , placeholder="Enter an index from 1 to 13 for level of construction and design" required>
 
                         <label class="sr-only">Year Built:</label>
                         <input type="text",  name="yr_built", placeholder="Enter year built" required>
@@ -134,27 +134,14 @@
                         <input type="text",  name="yr_renovated", placeholder="Year Renovated:" required>
 
                         <label class="sr-only">Latitude:</label>
-                        <input type="text",  name="lat" placeholder="Enter latitude" required>
+                        <input type="text",  name="lat" placeholder="Enter Latitude" required>
                    
                         <label class="sr-only">Longitude:</label>
-                        <input type="text",  name="long" ,placeholder="Enter longtitude" required>
+                        <input type="text",  name="long" , placeholder="Enter Longtitude" required>
 
                         <label class="sr-only">Total Square Footage of the property:</label>
-                        <input type="text", name="sqft_total" ,placeholder="Enter Total Square Footage of the property" required>
-<!--
-                        <label class="sr-only">Sale year:</label>
-                        <input type="text", id="sales_yr" name="sales_yr" placeholder="Enter Sale Year" required>
-
-                        <label class="sr-only">Sale month:</label>
-                        <input type="text", id="sales_mth" name="sales_mth" placeholder="Enter Sale Month" required>
-                   
-                        <label class="sr-only">Age of the house:</label>
-                        <input type="text",id="age" name="age" placeholder="Sale Year - Built Year" required>
-                    
-                        <label class="sr-only">Age of the house after renovated:</label>
-                        <input type="text",  id="age_rnv" name="age_rnv" placeholder="Renovated Year - Sale Year" required> -->
-             
-            
+                        <input type="text", name="sqft_total" , placeholder="Enter Total Square Footage of the property (Sqft_lot + Sqft_living + Sqft_above + Sqft basement )" required>
+       
             <input type="submit" class="btn btn-default" value="Predict">
                         
         </form>
@@ -164,7 +151,7 @@
     <div class="container" id="val_price">
     {{ prediction_text }}
     </div><br><br><br><br>
-   
+ 
 </center>
 </body>
 </html>
