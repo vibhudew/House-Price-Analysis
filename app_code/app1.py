@@ -41,7 +41,7 @@ def predictPrice():
     final_features = [np.array(int_features)]
     prediction = model2.predict(final_features)
     output = round(prediction[0]) 
-    return render_template('price_predict.html', prediction_text='Price in the house is :{}'.format(output),bedrooms=int_features[0],bathrooms=int_features[1],floors=int_features[2],waterfront=int_features[3],view=int_features[4],condition=int_features[5],grade=int_features[6], yr_built =int_features[7],yr_renovated=int_features[8],lat=int_features[9],long=int_features[10],sqft_total=int_features[11])
+    return render_template('price_predict.html', prediction_text='Price in the house is : ${}'.format(output),bedrooms=int_features[0],bathrooms=int_features[1],floors=int_features[2],waterfront=int_features[3],view=int_features[4],condition=int_features[5],grade=int_features[6], yr_built =int_features[7],yr_renovated=int_features[8],lat=int_features[9],long=int_features[10],sqft_total=int_features[11])
 
 
 
